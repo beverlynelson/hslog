@@ -1,0 +1,20 @@
+%head
+  %title= yield('Homeschool Log')
+  = stylesheet_link_tag    "application", :media => "all" 
+  = javascript_include_tag 'application', 'jquery', 'rails'
+  = csrf_meta_tags 
+%body
+  #container
+    #header
+      #nav
+      -if current_user
+        Welcome, #{current_user.name} !
+        = link_to "Sign Out", logout_path
+      #content
+        %h1= yield(:title)
+        - unless notice.blank?
+          %p.notice= notice
+        - unless alert.blank?
+          %p.alert= alert
+        = yield
+  
