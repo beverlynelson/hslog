@@ -5,4 +5,5 @@ class LogTest < ActiveSupport::TestCase
   should have_many :subjects
   should have_many :students
   
+  
 end

@@ -7,6 +7,7 @@ class CreateStudents < ActiveRecord::Migration
       t.date :birthdate
       t.string :gender
       t.integer :user_id
+      t.integer :log_id
 
       t.timestamps
     end

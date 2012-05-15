@@ -7,7 +7,7 @@
       @identity.errors.full_messages.each do |msg|
       %li= msg
   #field
-    = label_tag :name
+    = label_tag :FirstName
     %br
     = text_field_tag :name, @identity.try(:name)
   #field

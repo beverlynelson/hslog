@@ -32,14 +32,14 @@ ActiveRecord::Schema.define(:version => 20120507002633) do
   end
 
   create_table "logs", :force => true do |t|
-    t.string   "activity_description"
-    t.string   "activity_type"
-    t.string   "activity_name"
+    t.integer  "activity_id"
     t.integer  "educator_id"
     t.integer  "student_id"
     t.integer  "subject_id"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.integer  "day"
+    t.date     "date"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "students", :force => true do |t|
@@ -49,12 +49,14 @@ ActiveRecord::Schema.define(:version => 20120507002633) do
     t.date     "birthdate"
     t.string   "gender"
     t.integer  "user_id"
+    t.integer  "log_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
 
   create_table "subjects", :force => true do |t|
     t.string   "name"
+    t.integer  "log_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
