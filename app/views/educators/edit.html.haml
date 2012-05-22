@@ -1,0 +1,15 @@
+%h1 Build Your Educator Profile
+
+=simple_form_for :educator do |f|
+  = f.error_messages
+  %br
+  = f.input :mission, :label => "Your Family Mission"
+  %br
+  -#TODO Add the Jquery to make this add more children
+  
+  = f.simple_fields_for :students do |s| 
+    =s.input :first_name
+    =s.input :school_grade, :collection => (1..12)
+    =s.input :birthdate, :as => :date    
+  = f.submit 'Save' 
+

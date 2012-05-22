@@ -1,0 +1,11 @@
+=simple_form_for log do |f|
+  = f.error_messages
+  %br
+  = f.input :student_id 
+  %br
+  = f.input :subject_id 
+  %br
+  = f.input :day, collection: (1..5), :label => 'Day of The Week'
+  %br
+  = f.input :date, :as => :date 
+  = f.submit 'Save' 

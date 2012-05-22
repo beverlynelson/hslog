@@ -1,5 +1,7 @@
 Hslogger::Application.routes.draw do
   
+  resources :educators
+
   resources :logs
 
   root to: "sessions#new"

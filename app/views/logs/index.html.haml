@@ -1,0 +1,14 @@
+-logs ||= try(:logs)
+
+-title "Logs"
+
+Hello! 
+
+-#-logs.each do |log|
+  %li
+    = log.student.name
+    = log.day 
+    = link_to "Edit", edit_log_path(log)
+    
+%p
+= link_to "New Log", new_log_path
